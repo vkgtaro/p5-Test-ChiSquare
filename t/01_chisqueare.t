@@ -23,5 +23,12 @@ subtest 'judgement_chisquare' => sub {
     ok(! Test::ChiSquare::judgement_chisquare( [ [ 15, 18 ], [ 30, 40 ], [ 35, 29 ], [ 20, 13 ] ], 0.05), 'not ok' );
 };
 
+subtest 'chisquare_ok' => sub {
+    chisquare_ok( [ [ 50, 50 ], [ 50, 50 ] ], 0.05, 'ok' );
+    chisquare_ok( [ [ 50, 45 ], [ 50, 55 ] ], 0.05, 'ok' );
+
+    chisquare_ok( [ [ 15, 13 ], [ 30, 35 ], [ 35, 34 ], [ 20, 18 ] ], 0.05, 'ok' );
+};
+
 done_testing();
 
